@@ -1,0 +1,35 @@
+
+.insert {
+ /* border: 1px double black;*/
+  text-align: left;
+  font-weight: bold;
+  padding-left: 15px;
+  color: grey;
+}
+
+.insert_selected {
+ /* border: 1px double black;*/
+  text-align: left;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.description {
+  border: 1px double black;
+  text-align: left;
+  text-indent: 2em;
+  padding-left: 10px;
+}
+
+.translation {
+  border: 1px double black;
+  text-align: left;
+  padding-left: 30px;
+  color: grey;
+  font-weight: bold;
+}
+
+.translation i {
+  color: #126485;
+ /* font-weight: normal;*/
+}
