@@ -39,12 +39,17 @@ class Materials extends Component {
     const { items, hasErrored, isLoading } = this.props;
 
     if (hasErrored) {
-      return <p>Sorry! There was an error loading the items</p>;
+      return <p>Произошла ошибка загрузки.</p>;
     }
 
-    if (isLoading) {
-      return <p>Loading…</p>;
+    if (Object.keys(items).length === 1) {
+      return <p>Извините. В MongoDB отсутствуют данные или они не получены.</p>;
     }
+    /*
+        if (isLoading) {
+          return <p>Загрузка…</p>;
+        }
+    */
     //<ToDoInput onKeyPress={this.addTast} onChange={this.handleInputChange} />
     return (
       <div>
@@ -70,11 +75,12 @@ Materials.propTypes = {
   hasErrored: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired
 };
-
-const mapStateToProps = ({ items, itemsHasErrored, itemsIsLoading }) => {//пробрасываем наш стейт и возвращаем объект с данными которые доступны теперь в компоненте в виде пропсов
+/*
+const mapStateToProps = ({ items, HasErrored, IsLoading }) => {//пробрасываем наш стейт и возвращаем объект с данными которые доступны теперь в компоненте в виде пропсов
   return { items, itemsHasErrored, itemsIsLoading };
 };
-/* подобно:
+*/
+
 const mapStateToProps = (state) => {//пробрасываем наш стейт и возвращаем объект с данными которые доступны теперь в компоненте в виде пропсов
   return {
     items: state.items,
@@ -82,7 +88,7 @@ const mapStateToProps = (state) => {//пробрасываем наш стейт
     isLoading: state.itemsIsLoading
   };
 };
-*/
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchData: (url) => dispatch(itemsFetchData(url)),

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "concurrently \"(npm start --prefix client_react)\" \"(npm start --prefix backend_express)\"",
+    "start1": "npm start --prefix backend_express/ & npm start --prefix client_react/ ",
+    "install": ""
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
+  }
+}
